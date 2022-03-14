@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import dj_database_url
 import os
 from pathlib import Path
 from django.conf import settings
@@ -126,6 +127,8 @@ USE_TZ = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+ALLOWED_HOSTS = ['herokudjangoapp.herokuapp.com']
+
 
 STATIC_URL = '/static/'
 # CORS_ALLOWED_ORIGINS = [
@@ -147,3 +150,6 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+prod_db = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
