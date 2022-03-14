@@ -127,7 +127,7 @@ USE_TZ = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = ['herokudjangoapp.herokuapp.com']
+ALLOWED_HOSTS = ['pavsportfolio.herokuapp.com']
 
 
 STATIC_URL = '/static/'
