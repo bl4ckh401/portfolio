@@ -1,18 +1,18 @@
 from itertools import product
-from turtle import title, update
 from django.shortcuts import render
 from rest_framework.views import APIView
 from .models import Messages, Project
 from rest_framework import status
 from rest_framework.response import Response
-
 from .serializers import MessageSerializer, ProjectSerializer
 
 # Create your views here.
 
+
 class CreateProjectView(APIView):
     qSet = Project.objects.all()
-    serializer_class=ProjectSerializer
+    serializer_class = ProjectSerializer
+
     def post(self, request, format=None):
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
@@ -28,21 +28,22 @@ class CreateProjectView(APIView):
                     project.link_url = link_url
                     project.screenshots = screenshots
                     project.languages = languages
-                    project.save(update_fields=['link_url', 'cover_image', 'screenshots', 'languages'])
-                    return Response({'success':'Project existed but has been Successfully updated'}, status=status.HTTP_201_CREATED)
+                    project.save(update_fields=[
+                                 'link_url', 'cover_image', 'screenshots', 'languages'])
+                    return Response({'success': 'Project existed but has been Successfully updated'}, status=status.HTTP_201_CREATED)
 
                 else:
                     project = Project(
                         project_title=project_title,
                         link_url=link_url,
-                        cover_image=cover_image, 
+                        cover_image=cover_image,
                         screenshots=screenshots,
                         languages=languages)
                     project.save()
-                return Response({'success':'Project Created Successfully'}, status=status.HTTP_201_CREATED)
+                return Response({'success': 'Project Created Successfully'}, status=status.HTTP_201_CREATED)
 
             return Response({'Bad Request': 'Invalid data...'}, status=status.HTTP_400_BAD_REQUEST)
-        
+
 
 class ViewMessages(APIView):
     def get(self, request, format=None):
@@ -57,6 +58,7 @@ class ProjectView(APIView):
         serializer = ProjectSerializer(project, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+
 class GetCSRFToken(APIView):
 
     def get(self, request, format=None):
@@ -65,11 +67,12 @@ class GetCSRFToken(APIView):
 
 class SendMessage(APIView):
     serializer_class = MessageSerializer
+
     def post(self, request, format=None):
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
             message = serializer.data.get('messages')
             messo = Messages(messages=message)
             messo.save()
-            return Response({'success':'Message sent Successfully'}, status=status.HTTP_201_CREATED)
-        return Response({'error':'Bad Request'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'success': 'Message sent Successfully'}, status=status.HTTP_201_CREATED)
+        return Response({'error': 'Bad Request'}, status=status.HTTP_400_BAD_REQUEST)

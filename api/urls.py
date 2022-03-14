@@ -1,5 +1,4 @@
-from django.urls import include, path
-
+from django.urls import path
 from .views import CreateProjectView, GetCSRFToken, ProjectView, SendMessage, ViewMessages
 
 urlpatterns = [
@@ -10,4 +9,4 @@ urlpatterns = [
     path('send-chats/', SendMessage.as_view()),
 
 
-    ]
+]
