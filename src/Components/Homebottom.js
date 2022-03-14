@@ -8,7 +8,7 @@ function Homebottom() {
             method:"GET",
             headers: { 'Content-Type': "application/json"},
             }
-            fetch('https://pavsportfolio.herokuapp.com/api/work/', requestOptions)
+            fetch('/api/work/', requestOptions)
             .then(response => response.json())
             .then((data) => {
                 setProjects(data)

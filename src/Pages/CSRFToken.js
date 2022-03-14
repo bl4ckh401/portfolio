@@ -22,7 +22,7 @@ function CSRFToken() {
 
     useEffect(() => {
         const fetchData = async () => {
-            fetch("https://pavsportfolio.herokuapp.com/api/getcsrf")
+            fetch("/api/getcsrf")
         }
         fetchData()
         setcsrf(getCookie('csrftoken'))
