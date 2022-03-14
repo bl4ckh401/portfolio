@@ -1,0 +1,22 @@
+export const FooterData = [
+    {
+        title:'LinkedIn',
+        icon:'',
+        path:'/',
+    },
+    {
+        title:'Instagram',
+        icon:'',
+        path:'/about',
+    },
+    {
+        title:'Twitter',
+        icon:'',
+        path:'/contact',
+    },
+    {
+        title:'Github',
+        icon:'',
+        path:'/contact',
+    },
+]
