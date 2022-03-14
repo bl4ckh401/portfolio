@@ -5,7 +5,7 @@ import Hometop from '../Components/Hometop';
 
 function Work() {    
   
-  return <div className=''>
+  return <div className='worktop'>
       <Hometop />
       <HomeMid />
       <Homebottom />

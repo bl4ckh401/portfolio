@@ -9,14 +9,16 @@ import { AiOutlineClose } from "react-icons/ai";
 function Header() {
 
   const [ click, setClick ] = useState(false)
+  const [ isHovered, setisHovered ] = useState(false)
+
 
   const handleClick = (event) => {
     event.preventDefault()
     setClick(!click)
   }
-  const closeClick = (event) => {
+  const handleHover = (event) => {
     event.preventDefault()
-    setClick(false)
+    setisHovered(true)
   }
 
   return (
@@ -25,7 +27,7 @@ function Header() {
       <ul className={click ? "nav-options active" : "nav-options"}>
         {HeaderData.map((item) => {
         return(
-              <Link to={item.path} className='nav_link'>
+              <Link to={item.path} onMouseEnter={handleHover} className={isHovered ? "nav_link after":"nav_link"} onMouseLeave={handleHover}>
                 <li className="option mobile-option">{item.title}</li>
               </Link>
         )

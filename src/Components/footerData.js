@@ -2,21 +2,21 @@ export const FooterData = [
     {
         title:'LinkedIn',
         icon:'',
-        path:'/',
+        path:'https://www.linkedin.com/in/pavin-kiptoo-5250571aa/',
     },
     {
         title:'Instagram',
         icon:'',
-        path:'/about',
+        path:'https://www.instagram.com/__.hommie/',
     },
     {
         title:'Twitter',
         icon:'',
-        path:'/contact',
+        path:'https://twitter.com/pavkiptoo',
     },
     {
         title:'Github',
         icon:'',
-        path:'/contact',
+        path:'https://github.com/bl4ckh401/',
     },
 ]

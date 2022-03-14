@@ -14,7 +14,7 @@ function ChatMessage(props){
         'Content-Type': 'text/plain; charset=UTF-8'
       }
   }
-  fetch('http://127.0.0.1:8000/api/chats/', requestOptions)
+  fetch('https://pavsportfolio.herokuapp.com/api/chats/', requestOptions)
   .then(response => response.json())
   .then((response) => {
     setAllMessages(response)

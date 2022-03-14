@@ -21,7 +21,7 @@ function Chats(){
                     messages : messages,
             })
         }
-        fetch('http://127.0.0.1:8000/api/send-chats/', requestOptions)
+        fetch('https://pavsportfolio.herokuapp.com/api/send-chats/', requestOptions)
         .then(response => response.json())
         .then((data) => {
             console.log(data)
