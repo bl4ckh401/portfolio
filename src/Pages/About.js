@@ -1,4 +1,3 @@
-import Abouttop from "../Components/Abouttop";
 import AboutMid from "../Components/AboutMid";
 
 
