@@ -1,6 +1,9 @@
 import React from 'react';
 import {ReactComponent as Creativity} from '../showcreativity.svg';
 function HomeMid() {
+    const Available = new Date()
+    const month = Available.getMonth()
+    const date = Available.getDate()
   return (
   <div className='section_intro'>
       <div className='homemid_main'>
@@ -10,11 +13,11 @@ function HomeMid() {
                     <div className="availability_active" data-day="" data-month="">
                         <span className="month">
                             <span className="s-03">
-                                <span className="data">21</span>
+                                <span className="data">{date}</span>
                             </span>
                         </span>
                         <span className="info1">
-                            <span className="info"><span className="data">Jan</span></span>
+                            <span className="info"><span className="data">{month}</span></span>
                             <span className="info"><span>available for work</span></span>
                         </span>
                     </div>

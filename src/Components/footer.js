@@ -4,6 +4,7 @@ import { FooterData } from './footerData';
 function Footer() {
   return (
     <div className='footer_main'>
+      <div className='footer_main'>
       {FooterData.map((item) => {
         return(
           <div className='footer_content' key={item.id}>
@@ -15,7 +16,6 @@ function Footer() {
          </div>
         )
       })}
-        <div>
           <div className='footer_rights'>
             <h4>2022</h4>
         </div>
