@@ -15,12 +15,13 @@ class CreateProjectView(APIView):
 
     def post(self, request, format=None):
         serializer = self.serializer_class(data=request.data)
-        print(serializer)
         if serializer.is_valid():
             project_title = serializer.data.get('project_title')
             link_url = serializer.data.get('link_url')
             cover_image = serializer.data.get('cover_image')
             screenshots = serializer.data.get('screenshots')
+            print(cover_image)
+            print(screenshots)
             languages = serializer.data.get('languages')
             query_set = Project.objects.filter(project_title=project_title)
             if query_set.exists():
