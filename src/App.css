@@ -267,8 +267,7 @@ li {
 }
 .card_holder {
   display: flex;
-  flex-direction: row;
-  justify-content: stretch;
+  gap: 10px 30px;
   flex-wrap: wrap;
   width: 80vw;
   align-items: center;
@@ -276,13 +275,13 @@ li {
 .catalogue_main {
   display: flex;
   width: 360px;
+  gap: 10px 20px;
   border-radius: 21px;
   height: 420px;
   border: 1px gold solid;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin: 20px;
 }
 .item_name {
   opacity: 1;
@@ -299,7 +298,6 @@ li {
 .catalogue_card {
   display: flex;
   flex-direction: row;
-  margin-left: 100px;
 }
 .catalogue_org {
   display: flex;
