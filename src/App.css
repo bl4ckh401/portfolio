@@ -349,14 +349,12 @@ li {
 
 .footer_main {
   background-color: black;
-  display: flex;
   width: 100%;
   color: gold;
   font-family: "Monument", sans-serif;
+  display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  padding-left: 12px;
   font-size: calc(4px + 2vmin);
 }
 .footer_link {
@@ -364,12 +362,9 @@ li {
 }
 .footer_content {
   padding-right: 20px;
-  padding-top: 10px;
-  color: azure;
-}
-.footer_rights {
   color: azure;
   font-size: calc(4px + 2vmin);
+
 }
 .loading_main {
   background-color: black;
