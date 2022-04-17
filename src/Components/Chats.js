@@ -21,7 +21,7 @@ function Chats(){
                     messages : messages,
             })
         }
-        fetch('/api/send-chats/', requestOptions)
+        fetch('http://127.0.0.1:8000/api/send-chats/', requestOptions)
         .then(response => response.json())
         .then((data) => {
             console.log(data)

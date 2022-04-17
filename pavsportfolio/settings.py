@@ -85,7 +85,12 @@ WSGI_APPLICATION = 'pavsportfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # Password validation
@@ -126,7 +131,8 @@ USE_TZ = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = ['pavsportfolio.herokuapp.com']
+ALLOWED_HOSTS = ['pavsportfolio.herokuapp.com',
+                 '127.0.0.1:3000', 'localhost:3000']
 
 
 STATIC_URL = '/static/'

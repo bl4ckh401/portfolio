@@ -7,6 +7,4 @@ urlpatterns = [
     path('getcsrf/', GetCSRFToken.as_view()),
     path('chats/', ViewMessages.as_view()),
     path('send-chats/', SendMessage.as_view()),
-
-
 ]
