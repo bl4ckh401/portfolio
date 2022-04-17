@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-import dj_database_url
 import os
 from pathlib import Path
 from django.conf import settings
@@ -29,7 +28,7 @@ SECRET_KEY = '4#12j41oh-ivo9(grb$!ds$)=$sa0e=en@&w1_6gp5hd_@(ks4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -141,6 +140,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'build/static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 django_heroku.settings(locals())
 
 try:

@@ -24,7 +24,7 @@ function Chats() {
       method: "POST",
       header: {
         'Accept': '*/*',
-        'Content-Type': 'application/json'
+        'content-type': 'multipart/form-data'
       },
       body: JSON.stringify({
         email: email,
