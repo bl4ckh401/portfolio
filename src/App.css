@@ -261,18 +261,23 @@ li {
 }
 .homebottom {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .card_holder {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  justify-content: stretch;
+  flex-wrap: wrap;
+  width: 80vw;
+  align-items: center;
 }
 .catalogue_main {
   display: flex;
-  flex-wrap: wrap;
-  width: 350px;
+  width: 360px;
   border-radius: 21px;
+  height: 420px;
   border: 1px gold solid;
   justify-content: center;
   align-items: center;
@@ -286,8 +291,10 @@ li {
   color: gold;
 }
 .catalogue_img {
-  width: 320px;
+  width: 360px;
   height: 240px;
+  border-radius: 21px;
+  resize: both;
 }
 .catalogue_card {
   display: flex;

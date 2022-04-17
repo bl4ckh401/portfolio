@@ -70,8 +70,8 @@ class SendMessage(APIView):
     def post(self, request, format=None):
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
-            message = serializer.data.get('messages')
-            messo = Messages(messages=message)
+            message = serializer.data.get('message')
+            messo = Messages(message=message)
             messo.save()
             return Response({'success': 'Message sent Successfully'}, status=status.HTTP_201_CREATED)
         return Response({'error': 'Bad Request'}, status=status.HTTP_400_BAD_REQUEST)
