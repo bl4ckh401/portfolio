@@ -1,7 +1,7 @@
 {
   "name": "portfoliofront",
   "version": "0.1.0",
-  "proxy": "http://localhost:8000/",
+  "proxy": "https://pavsportfolio.herokuapp.com/",
   "private": true,
   "dependencies": {
     "@egjs/react-flicking": "^4.5.1",
