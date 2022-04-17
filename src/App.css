@@ -300,19 +300,76 @@ li {
   align-self: stretch;
   flex-wrap: wrap;
 }
-.chatpage {
+/* .chatpage {
   height: 100vh;
   display: flex;
   flex-direction: column;
+} */
+.chatpageContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .chats {
-  height: fit-content;
   color: gold;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 0px;
   padding: 10px;
+  height: 78vh;
+}
+.location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+  background-color: gold;
+  color: azure;
+  border-radius: 12px;
+  width: 30vw;
+  opacity: 0.8;
+  margin-bottom: 10px;
+  padding-left: 30px;
+}
+.SubmitContact {
+  background-color: transparent;
+  color: gold;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 50vw;
+  border-radius: 5px;
+}
+.texts {
+  padding-left: 30px;
+}
+.postChat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  margin-right: 20px;
+}
+.emailinput {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 50vw;
+  padding: 10px;
+  background-color: transparent;
+  color: azure;
+  border-radius: 5px;
+}
+.postChatForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
 }
 .allChats {
   display: flex;
@@ -333,15 +390,8 @@ li {
   padding-left: 10px;
 }
 .textarea {
-  position: fixed;
+  position: absolute;
   width: 80%;
-  bottom: 6%;
-  left: 3%;
-}
-.sendIcon {
-  position: fixed;
-  bottom: 6%;
-  left: 85%;
 }
 .btnsend {
   position: relative;
@@ -364,7 +414,6 @@ li {
   padding-right: 20px;
   color: azure;
   font-size: calc(4px + 2vmin);
-
 }
 .loading_main {
   background-color: black;

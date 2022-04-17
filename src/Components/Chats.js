@@ -1,70 +1,100 @@
-import {React, useState } from "react";
+import { React, useState } from "react";
 import ChatMessage from "./ChatMessage";
-import { IoIosSend } from "react-icons/io";
+import { IoIosCall, IoIosLocate, IoIosMail, IoIosSend } from "react-icons/io";
 
-function Chats(){
+function Chats() {
 
-   const [messages, setMessages] = useState("")
+  const [messages, setMessages] = useState("")
+  const [subject, setSubject] = useState("")
+  const [email, setEmail] = useState("")
 
-   const handleInput = (event) => {
-        setMessages(event.target.value)
-      }
-   const handleSendMessage =(event) => {
-          event.preventDefault();
-          const requestOptions = {
-            method : "POST",
-            header : { 
-              'Accept':'*/*',
-              'Content-Type': 'text/plain; charset=UTF-8'
-            },
-            body: JSON.stringify({
-                    messages : messages,
-            })
-        }
-        fetch('/api/send-chats/', requestOptions)
-        .then(response => response.json())
-        .then((data) => {
-            console.log(data)
-        })
-      }
-    
 
-    return(
+  const handleInput = (event) => {
+    setMessages(event.target.value)
+  }
+  const handleEmail = (event) => {
+    setEmail(event.target.value)
+  }
+  const handleSubject = (event) => {
+    setSubject(event.target.value)
+  }
+  const handleSendMessage = (event) => {
+    event.preventDefault();
+    const requestOptions = {
+      method: "POST",
+      header: {
+        'Accept': '*/*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        subject: subject,
+        messages: messages,
+      })
+    }
+    fetch('/api/send-chats/', requestOptions)
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+      })
+  }
+
+  return (
     <div className="chats">
-      <div className="allChats">
-      <h1>Chats</h1>
-          <div className="displayed_chats">
-              <div>
-                <ChatMessage />
-              </div>
+      <h2>CONTACT</h2>
+      <h3>GET IN TOUCH!</h3>
+      <div className="chatpageContent">
+        <div className="postChat">
+          <div className="location">
+            <IoIosLocate className="sendIcon"
+              style={{
+                height: '30px',
+                width: '30px',
+                color: 'azure'
+              }} />
+            <h4 className="texts">Nairobi, Kenya</h4>
           </div>
-      </div>
-      <div>
-        <form>
-          <textarea
-            type="text"
-            className="textarea"
-            placeholder="Enter Message"
-            rows={2}
-            onChange={handleInput}
-          />
-          <label htmlFor="send">
-            <IoIosSend
-            className="sendIcon"
-            style={{
-              height:'30px',
-              width : '30px',
-              color : 'azure'
-            }}/>
-          </label>
-          <button
-            hidden='true'
-            className="btnsend"
-            type="submit"
-            id="send"
-            onClick={handleSendMessage}>
-          </button>
-        </form>
+          <div className="location">
+            <IoIosCall className="sendIcon"
+              style={{
+                height: '30px',
+                width: '30px',
+                color: 'azure'
+              }} />
+            <h4 className="texts">+254 720447239</h4>
+          </div>
+          <div className="location">
+            <IoIosMail className="sendIcon"
+              style={{
+                height: '30px',
+                width: '30px',
+                color: 'azure'
+              }} />
+            <h4 className="texts">pavkiptoo@outlook.com</h4>
+          </div>
+        </div>
+        <div className="postChat">
+          <form className="postChatForm">
+            <input type="email" placeholder="example@gmail.com" rows={3} className="emailinput" onChange={handleEmail} />
+            <textarea
+              type="text"
+              className="emailinput"
+              placeholder="Subject"
+              rows={3}
+              onChange={handleSubject}
+            />
+            <textarea
+              type="text"
+              className="emailinput"
+              placeholder="Enter Message"
+              rows={6}
+              onChange={handleInput}
+            />
+            <button className="SubmitContact">
+              <h4 className="texts" onClick={handleSendMessage}>SUBMIT</h4>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

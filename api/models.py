@@ -16,7 +16,9 @@ class Project(models.Model):
         return self.project_title
 
 class Messages(models.Model):
+    email = models.CharField(max_length=255, default='', null=True)
     messages = models.CharField(max_length=255, default='', null=True)
+    subject = models.CharField(max_length=255, default='', null=True)
 
     def __str__(self):
-        return self.messages
+        return self.email
