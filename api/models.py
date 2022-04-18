@@ -6,10 +6,8 @@ from django.db import models
 class Project(models.Model):
     project_title = models.CharField(max_length=25, default="", null=True)
     link_url = models.CharField(max_length=255, default="", null=True)
-    cover_image = models.ImageField(
-        upload_to='images', max_length=255, null=True)
-    screenshots = models.ImageField(
-        upload_to='images', max_length=255, null=True)
+    cover_image = models.ImageField(upload_to='images')
+    screenshots = models.ImageField(upload_to='images')
     languages = models.CharField(max_length=255, default="", null=True)
 
     def __str__(self):

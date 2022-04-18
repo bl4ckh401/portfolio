@@ -12,4 +12,4 @@ class ProjectSerializer(serializers.ModelSerializer):
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Messages
-        fields = ['messages']
+        fields = ['message', 'email', 'subject']

@@ -7,7 +7,5 @@ urlpatterns = [
     path('', index),
     path('work/', index),
     path('contact', index),
-]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL,
+           document_root=settings.MEDIA_ROOT)

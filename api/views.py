@@ -16,32 +16,23 @@ class CreateProjectView(APIView):
     def post(self, request, format=None):
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
-            project_title = serializer.data.get('project_title')
-            link_url = serializer.data.get('link_url')
-            cover_image = serializer.data.get('cover_image')
-            screenshots = serializer.data.get('screenshots')
-            print(cover_image)
-            print(screenshots)
-            languages = serializer.data.get('languages')
-            query_set = Project.objects.filter(project_title=project_title)
-            if query_set.exists():
-                project = query_set[0]
-                project.link_url = link_url
-                project.screenshots = screenshots
-                project.languages = languages
-                project.save(update_fields=[
-                    'link_url', 'cover_image', 'screenshots', 'languages'])
-                return Response({'success': 'Project existed but has been Successfully updated'}, status=status.HTTP_201_CREATED)
-            else:
-                project = Project(
-                    project_title=project_title,
-                    link_url=link_url,
-                    cover_image=cover_image,
-                    screenshots=screenshots,
-                    languages=languages)
-                project.save()
-                return Response({'success': 'Project Created Successfully'}, status=status.HTTP_201_CREATED)
-        return Response({'Bad Request': 'Invalid data...'}, status=status.HTTP_400_BAD_REQUEST)
+            serializer.save()
+            # project_title = serializer.data.get('project_title')
+            # link_url = serializer.data.get('link_url')
+            # cover_image = serializer.data.get('cover_image')
+            # screenshots = serializer.data.get('screenshots')
+            # print(cover_image)
+            # print(screenshots)
+            # languages = serializer.data.get('languages')
+            # query_set = Project.objects.filter(project_title=project_title)
+            # if query_set.exists():
+            #     project = query_set[0]
+            #     project.link_url = link_url
+            #     project.screenshots = screenshots
+            #     project.languages = languages
+            #     project.save(update_fields=[
+            #     'link_url', 'cover_image', 'screenshots', 'languages'])
+            return Response({'success': 'Project Created Successfully'}, status=status.HTTP_201_CREATED)
 
 
 class ViewMessages(APIView):

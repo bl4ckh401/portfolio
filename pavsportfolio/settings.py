@@ -30,8 +30,6 @@ SECRET_KEY = '4#12j41oh-ivo9(grb$!ds$)=$sa0e=en@&w1_6gp5hd_@(ks4'
 
 DEBUG = False
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 INSTALLED_APPS = [
@@ -90,8 +88,6 @@ DATABASES = {
     }
 }
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -142,9 +138,5 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-django_heroku.settings(locals())
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
+django_heroku.settings(locals())

@@ -9,7 +9,5 @@ urlpatterns = [
     path('getcsrf/', GetCSRFToken.as_view()),
     path('chats/', ViewMessages.as_view()),
     path('send-chats/', SendMessage.as_view()),
-]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL,
+           document_root=settings.MEDIA_ROOT)
