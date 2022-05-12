@@ -35,7 +35,6 @@ function Blog() {
                             <h2>{post.blog_id.toString()}</h2>
                             <h3>{post.blog_title}</h3>
                             <button className='btn-blog' onClick={(props) => {
-                                setBlogSlug(post.blog_slug)
                                 const requestOptions = {
                                     method: 'post',
                                     headers: {
@@ -50,10 +49,6 @@ function Blog() {
                                         if (response.ok) {
                                             console.log('Redirecting to BlogPost')
                                             console.log(post.blog_slug)
-                                            // navigation(`/thoughts/${blogSlug}`)
-                                        }
-                                        else {
-                                            setError("Room not found")
                                         }
                                     })
                             }}
