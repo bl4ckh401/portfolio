@@ -1,6 +1,5 @@
 import { React, useState } from "react";
-import ChatMessage from "./ChatMessage";
-import { IoIosCall, IoIosLocate, IoIosMail, IoIosSend } from "react-icons/io";
+import { IoIosCall, IoIosLocate, IoIosMail } from "react-icons/io";
 
 function Chats() {
 
@@ -24,7 +23,7 @@ function Chats() {
       method: "POST",
       header: {
         'Accept': '*/*',
-        'content-type': 'multipart/form-data'
+        'content-type': 'text/plain; charset=UTF-8'
       },
       body: JSON.stringify({
         email: email,

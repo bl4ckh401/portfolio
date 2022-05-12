@@ -40,6 +40,7 @@ function Homebottom() {
                                         <div className="item_div">
                                             <h3>Languages : <span className="item_name">{project.languages}</span></h3>
                                         </div>
+                                        <a href='#'>Github Repository:{project.github_repo}</a>
                                     </div>
                                 </div>
                             </div>
@@ -47,9 +48,7 @@ function Homebottom() {
                     )
                 })
             }
-
         </div>
     </div>;
 }
-
 export default Homebottom;

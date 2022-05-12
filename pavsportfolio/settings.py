@@ -12,9 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from pathlib import Path
-from django.conf import settings
 import django_heroku
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +26,7 @@ SECRET_KEY = '4#12j41oh-ivo9(grb$!ds$)=$sa0e=en@&w1_6gp5hd_@(ks4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 
 # Application definition
@@ -57,8 +55,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'pavsportfolio.urls'
 TEMPLATES = [
@@ -128,7 +124,7 @@ USE_TZ = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = ['pavsportfolio.herokuapp.com']
+ALLOWED_HOSTS = ['pavsportfolio.herokuapp.com', 'http://127.0.0.1:3000']
 
 
 STATIC_URL = '/static/'
@@ -141,3 +137,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 django_heroku.settings(locals())
+
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_ACCESS_KEY_ID = 'AKIA5NMOBO35OI4BCJUK'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'pavsportfolio'
+AWS_QUERYSTRING_AUTH = False

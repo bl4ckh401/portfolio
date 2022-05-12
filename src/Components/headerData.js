@@ -1,14 +1,19 @@
 export const HeaderData = [
     {
-        title:'Work',
-        path:'/',
+        title: 'Work',
+        path: '/',
     },
     {
-        title:'About',
-        path:'/about',
+        title: 'Thoughts',
+        path: '/thoughts',
     },
     {
-        title:'Contact',
-        path:'/contact',
+        title: 'About',
+        path: '/about',
     },
+    {
+        title: 'Contact',
+        path: '/contact',
+    },
+
 ]
