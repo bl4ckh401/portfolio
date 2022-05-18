@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom'
 function Blog() {
 
     const [blogPosts, setBlogPosts] = useState([])
-
-
     const navigate = useNavigate()
 
     const onLoad = () => {
@@ -39,9 +37,6 @@ function Blog() {
                                     headers: {
                                         'Content-Type': 'application/json',
                                     },
-                                    // body: JSON.stringify({
-                                    //     blog_slug: post.blog_slug,
-                                    // })
                                 }
                                 fetch(`http://127.0.0.1:8000/api/blogpost/?blog_slug=` + post.blog_slug, requestOptions)
                                     .then((response) => {
