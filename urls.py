@@ -5,6 +5,6 @@ urlpatterns = [
     path('', index),
     path('work/', index),
     path('contact/', index),
-    path('thought/', index),
+    path('thoughts/', index),
     path('thoughts/<str:blog_slug>', index),
 ]

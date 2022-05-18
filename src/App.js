@@ -15,7 +15,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path='/' element={<Work />} />
+          <Route path='/' element={<Work />} exact />
           <Route path='/thoughts' element={<Blog />} />
           <Route path='/loading' element={<Loading />} />
           <Route path='/about' element={<About />} />

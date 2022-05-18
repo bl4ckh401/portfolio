@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+from dotenv import load_dotenv
 import os
 from pathlib import Path
 import django_heroku
@@ -26,7 +26,7 @@ SECRET_KEY = '4#12j41oh-ivo9(grb$!ds$)=$sa0e=en@&w1_6gp5hd_@(ks4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = False
 
 
 # Application definition
@@ -139,9 +139,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 django_heroku.settings(locals())
 
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 
-AWS_ACCESS_KEY_ID = 'AKIA5NMOBO35OI4BCJUK'
-AWS_SECRET_ACCESS_KEY = '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'
+load_dotenv()
+AMAZON_ACCESS_KEY = os.getenv("AMAZON_ACCESS_KEY")
+AMAZON_SECRET_ACCESS_KEY = os.getenv("AMAZON_SECRET_ACCESS_KEY")
+AWS_ACCESS_KEY_ID = AMAZON_ACCESS_KEY
+AWS_SECRET_ACCESS_KEY = AMAZON_SECRET_ACCESS_KEY
 AWS_STORAGE_BUCKET_NAME = 'pavsportfolio'
 AWS_QUERYSTRING_AUTH = False
