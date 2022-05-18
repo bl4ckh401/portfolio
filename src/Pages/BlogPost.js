@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-function BlogPost(props) {
+function BlogPost() {
     const { blog_slug } = useParams()
     const [blogPostData, setBlogPostData] = useState({})
 

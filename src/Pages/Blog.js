@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Blog() {
 
     const [blogPosts, setBlogPosts] = useState([])
-    const [error, setError] = useState('')
 
 
     const navigate = useNavigate()

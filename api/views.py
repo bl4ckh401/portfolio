@@ -4,8 +4,6 @@ from rest_framework import status
 from rest_framework.response import Response
 from .serializers import BlogPostSerializer, CreateBlogPostSerializer, MessageSerializer, ProjectSerializer
 
-# Create your views here.
-
 
 class CreateProjectView(APIView):
     qSet = Project.objects.all()
@@ -62,20 +60,6 @@ class AllBlogPosts(APIView):
         posts = BlogPost.objects.all()
         serializer = BlogPostSerializer(posts, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
-
-
-# class ShowBlogPost(APIView):
-#     lookup_url_kwargs = 'blog_slug'
-
-#     def post(self, request, format=None):
-#         blog_slug = request.data.get(self.lookup_url_kwargs)
-#         if blog_slug != None:
-#             blog = BlogPost.objects.filter(blog_slug=blog_slug)
-#             if len(blog) > 0:
-#                 blogPost = blog[0]
-#                 return Response({'message': 'blogPost Viewing'}, status=status.HTTP_200_OK)
-#             return Response({'Bad Request': 'blog_slug invalid'}, status=status.HTTP_400_BAD_REQUEST)
-#         return Response({'Bad Request': 'No blogPost blog_slug Passed'}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class OneBlogPost(APIView):
