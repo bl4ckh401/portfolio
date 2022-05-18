@@ -36,20 +36,8 @@ class CreateBlogPosts(APIView):
     def post(self, request, format=None):
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
-            blog_title = serializer.data.get('blog_title')
-            blog_post = serializer.data.get('blog_post')
-            # paste_bin = serializer.data.get('paste_bin')
-            query_set = BlogPost.objects.filter(blog_title=blog_title)
-            if query_set.exists():
-                blogPost = query_set[0]
-                blogPost.blog_post = blog_post
-                blogPost.save(update_fields=['blog_post'])
-                return Response({'Success': 'BlogPost successfully updated'}, status=status.HTTP_200_OK)
-            else:
-                Blog = BlogPost(blog_title=blog_title,
-                                blog_post=blog_post)
-                Blog.save()
-                return Response({'Success': 'Blog post created Successfully'}, status=status.HTTP_201_CREATED)
+            serializer.save()
+            return Response({'Success': 'Blog post created Successfully'}, status=status.HTTP_201_CREATED)
         else:
             return Response({'Error': 'Invalid request'}, status=status.HTTP_400_BAD_REQUEST)
 
