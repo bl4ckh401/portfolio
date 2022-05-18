@@ -39,7 +39,7 @@ class BlogPost(models.Model):
     blog_id = models.IntegerField(unique=True, null=False,
                                   primary_key=True, auto_created=True)
     blog_title = models.CharField(max_length=255, default="", null=True)
-    blog_post = models.CharField(max_length=1500, default='', null=True)
+    blog_post = models.CharField(max_length=10000, default='', null=True)
     blog_slug = models.CharField(max_length=8, default=getSlug, unique=True)
     created_at = models.DateTimeField(auto_now=True)
     paste_bin = models.ImageField(upload_to='images')
