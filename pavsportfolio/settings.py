@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-from dotenv import load_dotenv
 import os
 from pathlib import Path
 import django_heroku
@@ -26,7 +25,7 @@ SECRET_KEY = '4#12j41oh-ivo9(grb$!ds$)=$sa0e=en@&w1_6gp5hd_@(ks4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 
 # Application definition
@@ -124,7 +123,7 @@ USE_TZ = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = ['pavsportfolio.herokuapp.com', 'http://127.0.0.1:3000']
+ALLOWED_HOSTS = ['pavsportfolio.herokuapp.com']
 
 
 STATIC_URL = '/static/'
@@ -139,12 +138,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 django_heroku.settings(locals())
 
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-load_dotenv()
-AMAZON_ACCESS_KEY = os.getenv("AMAZON_ACCESS_KEY")
-AMAZON_SECRET_ACCESS_KEY = os.getenv("AMAZON_SECRET_ACCESS_KEY")
-AWS_ACCESS_KEY_ID = AMAZON_ACCESS_KEY
-AWS_SECRET_ACCESS_KEY = AMAZON_SECRET_ACCESS_KEY
-AWS_STORAGE_BUCKET_NAME = 'pavsportfolio'
-AWS_QUERYSTRING_AUTH = False
+# load_dotenv()
+# AMAZON_ACCESS_KEY = os.getenv("AMAZON_ACCESS_KEY")
+# AMAZON_SECRET_ACCESS_KEY = os.getenv("AMAZON_SECRET_ACCESS_KEY")
+# AWS_ACCESS_KEY_ID = AMAZON_ACCESS_KEY
+# AWS_SECRET_ACCESS_KEY = AMAZON_SECRET_ACCESS_KEY
+# AWS_STORAGE_BUCKET_NAME = 'pavsportfolio'
+# AWS_QUERYSTRING_AUTH = False

@@ -6,7 +6,7 @@ function BlogPost() {
     const [blogPostData, setBlogPostData] = useState({})
 
     const getBlogPost = () => {
-        fetch(`http://127.0.0.1:8000/api/blogpost/?blog_slug=` + blog_slug)
+        fetch(`/api/blogpost/?blog_slug=` + blog_slug)
             .then(response => response.json())
             .then((response) => {
                 setBlogPostData(response)
