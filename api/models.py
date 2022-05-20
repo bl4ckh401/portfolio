@@ -35,16 +35,26 @@ class Messages(models.Model):
         return self.subject
 
 
+STATUS = (
+    (0, "Draft"),
+    (1, "Publish")
+)
+
+
 class BlogPost(models.Model):
     blog_id = models.IntegerField(unique=True, null=False,
                                   primary_key=True, auto_created=True)
     blog_title = models.CharField(max_length=255, default="", null=True)
-    blog_post = models.CharField(max_length=10000, default='', null=True)
+    blog_post = models.TextField(max_length=10000, default='', null=True)
     blog_slug = models.CharField(max_length=8, default=getSlug, unique=True)
     created_at = models.DateTimeField(auto_now=True)
     paste_bin = models.ImageField(upload_to='images')
     likes = models.IntegerField(default=0)
+    status = models.IntegerField(choices=STATUS, default=0)
     comments = models.CharField(max_length=500, default='', null=True)
+
+    class Meta:
+        ordering = ['-created_at']
 
     def __str__(self):
         return self.blog_title
