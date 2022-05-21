@@ -8,7 +8,7 @@ function Homebottom() {
             method: "GET",
             headers: { 'Content-Type': "application/json" },
         }
-        fetch('https://127.0.0.1:8000/api/work/', requestOptions)
+        fetch('http://127.0.0.1:8000/api/work/', requestOptions)
             .then(response => response.json())
             .then((data) => {
                 setProjects(data)
