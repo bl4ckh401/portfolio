@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import parse from 'html-react-parser';
 
 function BlogPost() {
     const { blog_slug } = useParams()
     const [blogPostData, setBlogPostData] = useState({})
 
     const getBlogPost = () => {
-        fetch(`/api/blogpost/?blog_slug=` + blog_slug)
-            .then(response => response.json())
-            .then((response) => {
-                setBlogPostData(response)
-                console.log(blogPostData)
+        const RequestData = {
+            method: "GET",
+            headers: { 'Content-Type': "application/json" }
+        }
+        fetch(`http://127.0.0.1:8000/api/blogpost/?blog_slug=` + blog_slug, RequestData)
+            .then((response) => response.json())
+            .then((data) => {
+                setBlogPostData(data)
             })
+        console.log(blogPostData)
     }
     useEffect(() => {
         getBlogPost()
@@ -22,7 +27,7 @@ function BlogPost() {
             <div className='blogpost'>
                 <h1>{blogPostData.blog_title}</h1>
                 <div>
-                    <p>{blogPostData.blog_post}</p>
+                    {parse(`${blogPostData.blog_post}`)}
                 </div>
             </div>
         </div>

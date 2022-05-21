@@ -1,5 +1,7 @@
+from django.conf import settings
 from django.urls import path
 from .views import BlogPost, AllBlogPosts, CreateBlogPosts, CreateProjectView, GetCSRFToken, OneBlogPost, ProjectView, SendMessage, ViewMessages
+
 
 urlpatterns = [
     path('create-project/', CreateProjectView.as_view(), name='create_project'),

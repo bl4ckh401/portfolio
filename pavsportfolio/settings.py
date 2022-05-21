@@ -25,7 +25,7 @@ SECRET_KEY = '4#12j41oh-ivo9(grb$!ds$)=$sa0e=en@&w1_6gp5hd_@(ks4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = False
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'corsheaders',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -139,6 +140,9 @@ django_heroku.settings(locals())
 
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# allows to load iframe from same hostname
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # load_dotenv()
 # AMAZON_ACCESS_KEY = os.getenv("AMAZON_ACCESS_KEY")

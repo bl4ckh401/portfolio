@@ -5,25 +5,24 @@ function HomeMid() {
     return (
         <div className='section_intro'>
             <div className='homemid_main'>
-                <div className='svg_contents'>
-                    <span className='svg_content'>
+                <div className='svg_content'>
+                    <div className='svg_contents'>
                         <div className="title_active">
                             <div className="availability_active" data-day="" data-month="">
                                 <span className="month">
-                                    <span className="s-03">
-                                        <span className="data">{date}</span>
-                                    </span>
+                                    <span className="data">{date}</span>
                                 </span>
                                 <span className="info1">
                                     <span className="info"><span>available for work</span></span>
                                 </span>
                             </div>
                             <div>
-                                <span className="s-03"><span>show</span></span><br />
-                                <span className="s-03"><span>creativity</span></span>
+                                <span className="s-03">show</span>
+                                <br />
+                                <span className="s-03">creativity</span>
                             </div>
                         </div>
-                    </span>
+                    </div>
                 </div>
             </div>
             <div className='smallabout'>

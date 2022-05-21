@@ -1,14 +1,15 @@
 from django.contrib import admin
 from .models import *
-
+from django_summernote.admin import SummernoteModelAdmin
 # Register your models here.
 
 
-class BlogAdmin(admin.ModelAdmin):
-    list_display = ('blog_title', 'blog_slug', 'status', 'created_at')
-    list_filter = ("status",)
+class BlogAdmin(SummernoteModelAdmin):
+    list_display = ('blog_title', 'blog_slug', 'blog_status', 'created_at')
+    list_filter = ("blog_status",)
     search_fields = ['blog_title', 'blog_post']
     prepopulated_fields = {'blog_slug': ('blog_title',)}
+    summernote_fields = ('blog_post', )
 
 
 admin.site.register(Project)

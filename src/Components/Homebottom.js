@@ -8,12 +8,12 @@ function Homebottom() {
             method: "GET",
             headers: { 'Content-Type': "application/json" },
         }
-        fetch('/api/work/', requestOptions)
+        fetch('https://127.0.0.1:8000/api/work/', requestOptions)
             .then(response => response.json())
             .then((data) => {
                 setProjects(data)
                 console.log(data)
-                console.log(data.cover_image.url)
+                console.log(data.cover_image)
             }
             )
     }
@@ -32,7 +32,7 @@ function Homebottom() {
                                 <div className="catalogue_main">
                                     <div className="item_desc">
                                         <div className="catalogue_img">
-                                            <img className="catalogue_img" src={project.cover_image.url} alt="alternative project image" />
+                                            <img className="catalogue_img" src={project.cover_image} alt="alternative project image" />
                                         </div>
                                         <div className="item_div">
                                             <h3>Title : <span className="item_name">{project.project_title}</span></h3>
@@ -40,7 +40,7 @@ function Homebottom() {
                                         <div className="item_div">
                                             <h3>Languages : <span className="item_name">{project.languages}</span></h3>
                                         </div>
-                                        <a href='#'>Github Repository:{project.github_repo}</a>
+                                        <h3>Github Repository : <span className="item_name"><a href={project.github_repo}>{project.github_repo}</a></span></h3>
                                     </div>
                                 </div>
                             </div>

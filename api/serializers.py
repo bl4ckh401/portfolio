@@ -23,7 +23,7 @@ class BlogPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = BlogPost
         fields = ['blog_id', 'blog_title', 'blog_slug',
-                  'blog_post', 'paste_bin', 'likes', 'comments']
+                  'blog_post', 'paste_bin']
 
 
 class CreateBlogPostSerializer(serializers.ModelSerializer):

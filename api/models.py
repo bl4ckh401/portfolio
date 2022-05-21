@@ -29,7 +29,7 @@ class Project(models.Model):
 class Messages(models.Model):
     email = models.CharField(max_length=255, default='', null=True)
     subject = models.CharField(max_length=255, default='', null=True)
-    message = models.CharField(max_length=255, default='', null=True)
+    message = models.TextField(max_length=255, default='', null=True)
 
     def __str__(self):
         return self.subject
@@ -49,9 +49,7 @@ class BlogPost(models.Model):
     blog_slug = models.CharField(max_length=8, default=getSlug, unique=True)
     created_at = models.DateTimeField(auto_now=True)
     paste_bin = models.ImageField(upload_to='images')
-    likes = models.IntegerField(default=0)
-    status = models.IntegerField(choices=STATUS, default=0)
-    comments = models.CharField(max_length=500, default='', null=True)
+    blog_status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         ordering = ['-created_at']

@@ -2,12 +2,12 @@
   "name": "portfoliofront",
   "version": "0.1.0",
   "private": true,
-  "proxy":"http://127.0.0.1:8000",
   "dependencies": {
     "@egjs/react-flicking": "^4.5.1",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "html-react-parser": "^1.4.12",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
@@ -31,7 +31,7 @@
   },
   "engines": {
     "node": "16.14.0",
-    "npm": "8.5.3" 
+    "npm": "8.5.3"
   },
   "browserslist": {
     "production": [
