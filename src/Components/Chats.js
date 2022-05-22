@@ -69,7 +69,7 @@ function Chats() {
                 width: '30px',
                 color: 'azure'
               }} />
-            <h4 className="texts">pavkiptoo@outlook.com</h4>
+            <h4 className="textsemail">pavkiptoo@outlook.com</h4>
           </div>
         </div>
         <div className="postChat">
