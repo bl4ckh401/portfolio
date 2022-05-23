@@ -21,7 +21,8 @@ django-google-api==1.0.1
 django-heroku==0.3.1
 django-storages==1.12.3
 django-summernote==0.8.20.0
-djangorestframework==3.9.3
+django-utils-six==2.0
+djangorestframework==3.12.4
 djangorestframework-jwt==1.11.0
 djangorestframework-simplejwt==5.1.0
 google-api-core==2.7.3
@@ -60,7 +61,7 @@ s3transfer==0.5.2
 Serializer==0.2.1
 simplejson==3.17.5
 six==1.16.0
-sqlparse==0.4.2
+sqlparse==0.4.1
 toml==0.10.2
 typing-extensions==4.2.0
 uritemplate==4.1.1
