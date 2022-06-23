@@ -8,6 +8,7 @@ import Work from './Pages/Work';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Contact from './Pages/Contact';
 import BlogPost from './Pages/BlogPost';
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/thoughts/:blog_slug' element={<BlogPost />} />
         </Routes>
+        <TawkMessengerReact
+          propertyId="62b450c2b0d10b6f3e78ef94"
+          widgetId="1g685musc" />
         <Footer />
       </Router>
     </div>

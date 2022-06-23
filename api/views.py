@@ -38,6 +38,7 @@ class CreateBlogPosts(APIView):
         if serializer.is_valid():
             blog_title = serializer.data.get('blog_title')
             blog_post = serializer.data.get('blog_post')
+            blog_status = serializer.data.get('blog_status')
             paste_bin = serializer.data.get('paste_bin')
             query_set = BlogPost.objects.filter(blog_title=blog_title)
             if query_set.exists():
