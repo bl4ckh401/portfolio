@@ -1,0 +1,31 @@
+{
+  "name": "zuzu-next-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "bootstrap": "5.1.3",
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.2.4",
+    "google-map-react": "^2.2.0",
+    "next": "13.2.4",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.7.2",
+    "react-countup": "^6.4.2",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
+    "react-modal-video": "^2.0.0",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+    "uuid": "^9.0.0"
+  }
+}
