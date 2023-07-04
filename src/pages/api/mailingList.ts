@@ -13,10 +13,10 @@ export default async function handler(
 
   const data = {
     contacts: [{ email: email }],
-    list_ids: ['87c37577-035f-48ca-8349-c366c6b299a8'],
+    list_ids: ['##########'],
   };
   const headers = {
-    Authorization: `Bearer ${'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'}`,
+    Authorization: `Bearer ${'#######'}`,
     "Content-Type": "application/json",
   };
 
