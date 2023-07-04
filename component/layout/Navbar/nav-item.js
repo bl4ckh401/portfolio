@@ -14,6 +14,8 @@ export default function NavItem({ navItemText, menuItems = false, megaMenu = fal
 		if (!menuItems) {
 			if(navItemText.toLowerCase() === 'home'){
 				return '/'
+			}else if(navItemText.toLowerCase() === 'thoughts'){
+				return "https://medium.com/@pavkiptoo"
 			}else{
 				return "/" +  navItemText.split(" ").join("-").toLowerCase();
 			}

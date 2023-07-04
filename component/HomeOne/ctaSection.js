@@ -1,6 +1,36 @@
 import Link from "next/link";
+import axios from "axios";
+import { useState } from "react";
 
 export default function CtaSection() {
+	const [mail, setMail] = useState(null);
+	const [loading, setLoading] = useState(false);
+	const [success, setSuccess] = useState();
+	const [messageState, setMessageState] = useState("");
+
+	const Subscribe = async (e) => {
+		e.preventDefault();
+		setLoading(true);
+		axios
+		  .put("/api/mailingList", {
+			mail: mail,
+		  })
+		  .then((res) => {
+			if (res.status === 200) {
+			  setLoading(false);
+			  setSuccess(true);
+			  setMessageState(res.data.message);
+			} else {
+			  setLoading(false);
+			  setMessageState(res.data.message);
+			}
+		  })
+		  .catch((err) => {
+			setLoading(false);
+			setMessageState(String(err.message));
+		  });
+	  };
+	
 	return (
 		<div className="zuzu-cta-section bg-gray-500">
 			<div className="container">

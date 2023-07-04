@@ -13,6 +13,7 @@ export default function Home() {
 		<>
 			<Head>
 				<title>HOME | PavPrograms | Full-Stack Dev</title>
+				<meta name='ir-site-verification-token' value='872990049'></meta>
 			</Head>
 			<HeroSection />
 			<SectionThree />

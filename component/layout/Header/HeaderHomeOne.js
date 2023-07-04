@@ -41,8 +41,8 @@ export default function HeaderHomeOne() {
 								<NavItem navItemText="Home" />
 								{/* <NavItem navItemText="Services" /> */}
 								<NavItem navItemText="About" />
-								{/* <NavItem navItemText="Shop" /> */}
 								<NavItem navItemText="Thoughts" />
+								{/* <NavItem navItemText="Shop" /> */}
 								<NavItem navItemText="Contact" />
 							</Navbar>
 						</nav>
